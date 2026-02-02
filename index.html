@@ -8,7 +8,6 @@
     <meta property="og:description" content="Research Assistant at Cornell University.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://francisbahk.github.io/">
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
         body {
             font-family: Georgia, 'Times New Roman', serif;
@@ -37,31 +36,21 @@
         p { margin: 0 0 12px 0; }
         ul { margin: 0; padding-left: 18px; }
         li { margin-bottom: 6px; }
-        #network {
-            width: 100%;
-            height: 450px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            margin-top: 10px;
-        }
-        .legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 12px;
-            font-size: 0.85rem;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+        /* Coursework Tree Styles */
+        .course-tree { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 15px; }
+        .major-branch { flex: 1; min-width: 280px; }
+        .major-title { font-size: 1rem; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 2px solid; }
+        .math-title { border-color: #e74c3c; color: #c0392b; }
+        .classics-title { border-color: #9b59b6; color: #8e44ad; }
+        .level-group { margin-bottom: 10px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
+        .level-label { font-weight: bold; font-size: 0.75rem; color: #666; min-width: 45px; padding-top: 3px; }
+        .course { font-size: 0.8rem; padding: 3px 8px; border-radius: 4px; background: #f5f5f5; border-left: 3px solid; }
+        .course.math { border-color: #e74c3c; }
+        .course.cs { border-color: #3498db; }
+        .course.orie { border-color: #f39c12; }
+        .course.econ { border-color: #1abc9c; }
+        .course.latin { border-color: #9b59b6; }
+        .course.classics { border-color: #e67e22; }
     </style>
 </head>
 <body>
@@ -124,112 +113,66 @@
 
 <!-- ========== COURSEWORK ========== -->
 <h2>Coursework</h2>
-<p>Interactive network of courses taken at Cornell. Hover over nodes for details.</p>
-<div id="network"></div>
-<div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background: #4ecdc4;"></div> CS</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #ff6b6b;"></div> MATH</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #ffe66d;"></div> ORIE</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #95e1d3;"></div> ECON</div>
+<div class="course-tree">
+    <div class="major-branch">
+        <h3 class="major-title math-title">Mathematics & STEM</h3>
+        <div class="level-group">
+            <span class="level-label">2000</span>
+            <span class="course cs">CS 2110 OOP & Data Structures</span>
+            <span class="course math">MATH 2210 Linear Algebra</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">3000</span>
+            <span class="course cs">CS 3110 Functional Programming</span>
+            <span class="course math">MATH 3110 Real Analysis</span>
+            <span class="course math">MATH 3340 Abstract Algebra</span>
+            <span class="course orie">ORIE 3300 Optimization I</span>
+            <span class="course orie">ORIE 3310 Optimization II</span>
+            <span class="course econ">ECON 3130 Statistics & Probability</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">4000</span>
+            <span class="course math">MATH 4200 Diff Equations & Dynamical Systems</span>
+            <span class="course math">MATH 4220 Complex Analysis</span>
+            <span class="course math">MATH 4500 Matrix Groups</span>
+            <span class="course math">MATH 4530 Topology</span>
+            <span class="course math">MATH 4540 Differential Geometry</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">6000+</span>
+            <span class="course math">MATH 6230 Optimal Control & Differential Games</span>
+            <span class="course math">MATH 7390 Lie Groups & Lie Algebras</span>
+        </div>
+    </div>
+    <div class="major-branch">
+        <h3 class="major-title classics-title">Classics & Latin</h3>
+        <div class="level-group">
+            <span class="level-label">1000</span>
+            <span class="course latin">LATIN 1201 Elementary Latin I</span>
+            <span class="course latin">LATIN 1202 Elementary Latin II</span>
+            <span class="course classics">CLASS 1562 Augustine's Confessions</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">2000</span>
+            <span class="course latin">LATIN 2203 Catullus</span>
+            <span class="course latin">LATIN 2209 Latin Poetry</span>
+            <span class="course latin">LATIN 2209 Prudentius' Psychomachia</span>
+            <span class="course classics">CLASS 2675 Ancient Greece</span>
+            <span class="course classics">CLASS 2688 Cleopatra's Egypt</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">3000</span>
+            <span class="course latin">LATIN 3203 Roman Poetry</span>
+            <span class="course latin">LATIN 3220 Rapid Reading in Latin</span>
+            <span class="course latin">LATIN 3220 Tacitus' Annales</span>
+            <span class="course classics">CLASS 3636 Lucian: Ancient Enlightenment</span>
+        </div>
+        <div class="level-group">
+            <span class="level-label">4000</span>
+            <span class="course latin">LATIN 4223 Medieval Latin Literature</span>
+        </div>
+    </div>
 </div>
-
-<script>
-// Course data
-const courses = [
-    // CS
-    { id: 1, label: "CS 2110", title: "CS 2110\nOOP & Data Structures", color: "#4ecdc4", group: "CS" },
-    { id: 2, label: "CS 3110", title: "CS 3110\nFunctional Programming", color: "#4ecdc4", group: "CS" },
-    // MATH
-    { id: 3, label: "MATH 2210", title: "MATH 2210\nLinear Algebra", color: "#ff6b6b", group: "MATH" },
-    { id: 4, label: "MATH 3110", title: "MATH 3110\nReal Analysis", color: "#ff6b6b", group: "MATH" },
-    { id: 5, label: "MATH 3340", title: "MATH 3340\nAbstract Algebra", color: "#ff6b6b", group: "MATH" },
-    { id: 6, label: "MATH 4200", title: "MATH 4200\nDiff Equations & Dynamical Systems", color: "#ff6b6b", group: "MATH" },
-    { id: 7, label: "MATH 4220", title: "MATH 4220\nComplex Analysis", color: "#ff6b6b", group: "MATH" },
-    { id: 8, label: "MATH 4500", title: "MATH 4500\nMatrix Groups", color: "#ff6b6b", group: "MATH" },
-    { id: 9, label: "MATH 4530", title: "MATH 4530\nTopology", color: "#ff6b6b", group: "MATH" },
-    { id: 10, label: "MATH 4540", title: "MATH 4540\nDifferential Geometry", color: "#ff6b6b", group: "MATH" },
-    { id: 11, label: "MATH 6230", title: "MATH 6230\nOptimal Control & Differential Games", color: "#ff6b6b", group: "MATH" },
-    { id: 12, label: "MATH 7390", title: "MATH 7390\nLie Groups & Lie Algebras", color: "#ff6b6b", group: "MATH" },
-    // ORIE
-    { id: 13, label: "ORIE 3300", title: "ORIE 3300\nOptimization I", color: "#ffe66d", group: "ORIE" },
-    { id: 14, label: "ORIE 3310", title: "ORIE 3310\nOptimization II", color: "#ffe66d", group: "ORIE" },
-    // ECON
-    { id: 15, label: "ECON 3130", title: "ECON 3130\nStatistics & Probability", color: "#95e1d3", group: "ECON" }
-];
-
-// Connections (prerequisites/related courses)
-const edges = [
-    { from: 1, to: 2 },       // CS 2110 → CS 3110
-    { from: 3, to: 5 },       // Linear Algebra → Abstract Algebra
-    { from: 3, to: 8 },       // Linear Algebra → Matrix Groups
-    { from: 3, to: 6 },       // Linear Algebra → Diff Eq
-    { from: 4, to: 7 },       // Real Analysis → Complex Analysis
-    { from: 5, to: 12 },      // Abstract Algebra → Lie Groups
-    { from: 8, to: 12 },      // Matrix Groups → Lie Groups
-    { from: 9, to: 10 },      // Topology → Differential Geometry
-    { from: 3, to: 9 },       // Linear Algebra → Topology
-    { from: 13, to: 14 },     // ORIE I → ORIE II
-    { from: 14, to: 11 },     // ORIE II → Optimal Control
-    { from: 6, to: 11 },      // Diff Eq → Optimal Control
-    { from: 15, to: 13 },     // Stats → ORIE I
-    { from: 3, to: 13 }       // Linear Algebra → ORIE I
-];
-
-// Create nodes with styling
-const nodes = new vis.DataSet(courses.map(c => ({
-    id: c.id,
-    label: c.label,
-    title: c.title,
-    color: {
-        background: c.color,
-        border: c.color,
-        highlight: { background: "#fff", border: c.color },
-        hover: { background: "#fff", border: c.color }
-    },
-    font: { color: "#1a1a2e", size: 12, face: "Arial", bold: true },
-    shape: "dot",
-    size: 20,
-    borderWidth: 2
-})));
-
-// Create edges with styling
-const edgeData = new vis.DataSet(edges.map(e => ({
-    from: e.from,
-    to: e.to,
-    color: { color: "rgba(255,255,255,0.2)", highlight: "rgba(255,255,255,0.5)", hover: "rgba(255,255,255,0.5)" },
-    width: 1.5,
-    smooth: { type: "continuous" }
-})));
-
-// Network options
-const options = {
-    physics: {
-        stabilization: { iterations: 200 },
-        barnesHut: {
-            gravitationalConstant: -3000,
-            springConstant: 0.04,
-            springLength: 120
-        }
-    },
-    interaction: {
-        hover: true,
-        tooltipDelay: 100,
-        zoomView: true,
-        dragView: true
-    },
-    nodes: {
-        shadow: { enabled: true, color: "rgba(0,0,0,0.3)", size: 8, x: 2, y: 2 }
-    },
-    edges: {
-        shadow: false
-    }
-};
-
-// Initialize network
-const container = document.getElementById("network");
-const data = { nodes: nodes, edges: edgeData };
-const network = new vis.Network(container, data, options);
-</script>
 
 </body>
 </html>
