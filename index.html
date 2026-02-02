@@ -37,21 +37,12 @@
         ul { margin: 0; padding-left: 18px; }
         li { margin-bottom: 6px; }
         /* Coursework Tree Styles */
-        .course-legend { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; font-size: 0.8rem; }
-        .legend-item { display: flex; align-items: center; gap: 5px; }
-        .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
         .course-tree { display: flex; flex-wrap: wrap; gap: 30px; }
         .major-branch { flex: 1; min-width: 280px; }
         .major-title { font-size: 1rem; font-weight: bold; margin-bottom: 8px; }
         .level-group { margin-bottom: 12px; }
         .level-label { font-weight: bold; font-size: 0.8rem; color: #666; display: block; margin-bottom: 5px; }
-        .course { font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; background: #f5f5f5; border-left: 3px solid; display: block; margin-bottom: 4px; }
-        .course.math { border-color: #e74c3c; }
-        .course.cs { border-color: #3498db; }
-        .course.orie { border-color: #f39c12; }
-        .course.econ { border-color: #1abc9c; }
-        .course.latin { border-color: #9b59b6; }
-        .course.classics { border-color: #e67e22; }
+        .course { font-size: 0.8rem; padding: 4px 10px; border-radius: 4px; background: #f5f5f5; display: block; margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -114,59 +105,51 @@
 
 <!-- ========== COURSEWORK ========== -->
 <h2>Coursework</h2>
-<div class="course-legend">
-    <div class="legend-item"><div class="legend-dot" style="background: #e74c3c;"></div> MATH</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #3498db;"></div> CS</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #f39c12;"></div> ORIE</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #1abc9c;"></div> ECON</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #9b59b6;"></div> LATIN</div>
-    <div class="legend-item"><div class="legend-dot" style="background: #e67e22;"></div> CLASS</div>
-</div>
 <div class="course-tree">
     <div class="major-branch">
         <h3 class="major-title">Mathematics</h3>
         <div class="level-group">
             <span class="level-label">Undergraduate</span>
-            <span class="course math">MATH 1920 Multivariable Calculus</span>
-            <span class="course cs">CS 2110 OOP & Data Structures</span>
-            <span class="course math">MATH 2210 Linear Algebra</span>
-            <span class="course cs">CS 3110 Functional Programming</span>
-            <span class="course math">MATH 3110 Real Analysis</span>
-            <span class="course econ">ECON 3130 Statistics & Probability</span>
-            <span class="course orie">ORIE 3300 Optimization I</span>
-            <span class="course orie">ORIE 3310 Optimization II</span>
-            <span class="course math">MATH 3340 Abstract Algebra</span>
-            <span class="course math">MATH 4200 Diff Equations & Dynamical Systems</span>
-            <span class="course math">MATH 4220 Complex Analysis</span>
-            <span class="course math">MATH 4500 Matrix Groups</span>
-            <span class="course math">MATH 4530 Topology</span>
-            <span class="course math">MATH 4540 Differential Geometry</span>
+            <span class="course">MATH 1920 Multivariable Calculus</span>
+            <span class="course">CS 2110 OOP & Data Structures</span>
+            <span class="course">MATH 2210 Linear Algebra</span>
+            <span class="course">CS 3110 Functional Programming</span>
+            <span class="course">MATH 3110 Real Analysis</span>
+            <span class="course">ECON 3130 Statistics & Probability</span>
+            <span class="course">ORIE 3300 Optimization I</span>
+            <span class="course">ORIE 3310 Optimization II</span>
+            <span class="course">MATH 3340 Abstract Algebra</span>
+            <span class="course">MATH 4200 Diff Equations & Dynamical Systems</span>
+            <span class="course">MATH 4220 Complex Analysis</span>
+            <span class="course">MATH 4500 Matrix Groups</span>
+            <span class="course">MATH 4530 Topology</span>
+            <span class="course">MATH 4540 Differential Geometry</span>
         </div>
         <div class="level-group">
             <span class="level-label">Graduate</span>
-            <span class="course math">MATH 6230 Optimal Control & Differential Games</span>
-            <span class="course math">MATH 7390 Lie Groups & Lie Algebras</span>
+            <span class="course">MATH 6230 Optimal Control & Differential Games</span>
+            <span class="course">MATH 7390 Lie Groups & Lie Algebras</span>
         </div>
     </div>
     <div class="major-branch">
         <h3 class="major-title">Classics</h3>
         <div class="level-group">
             <span class="level-label">Undergraduate</span>
-            <span class="course latin">LATIN 1201 Elementary Latin I</span>
-            <span class="course latin">LATIN 1202 Elementary Latin II</span>
-            <span class="course classics">CLASS 1562 Augustine's Confessions</span>
-            <span class="course latin">LATIN 2201 Pliny's Letters</span>
-            <span class="course latin">LATIN 2203 Catullus</span>
-            <span class="course latin">LATIN 2209 Prudentius' Psychomachia</span>
-            <span class="course classics">CLASS 2675 Ancient Greece</span>
-            <span class="course classics">CLASS 2688 Cleopatra's Egypt</span>
-            <span class="course latin">LATIN 3203 Roman Poetry</span>
-            <span class="course latin">LATIN 3220 Tacitus' Annales</span>
-            <span class="course classics">CLASS 3636 Lucian: Ancient Enlightenment</span>
+            <span class="course">LATIN 1201 Elementary Latin I</span>
+            <span class="course">LATIN 1202 Elementary Latin II</span>
+            <span class="course">CLASS 1562 Augustine's Confessions</span>
+            <span class="course">LATIN 2201 Pliny's Letters</span>
+            <span class="course">LATIN 2203 Catullus</span>
+            <span class="course">LATIN 2209 Prudentius' Psychomachia</span>
+            <span class="course">CLASS 2675 Ancient Greece</span>
+            <span class="course">CLASS 2688 Cleopatra's Egypt</span>
+            <span class="course">LATIN 3203 Roman Poetry</span>
+            <span class="course">LATIN 3220 Tacitus' Annales</span>
+            <span class="course">CLASS 3636 Lucian: Ancient Enlightenment</span>
         </div>
         <div class="level-group">
             <span class="level-label">Graduate</span>
-            <span class="course latin">LATIN 7223 Medieval Latin Literature</span>
+            <span class="course">LATIN 7223 Medieval Latin Literature</span>
         </div>
     </div>
 </div>
